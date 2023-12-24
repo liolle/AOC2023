@@ -1,1 +1,33 @@
-# AOC2023
+# Advent of Code 2023
+
+This repository contains my solutions for the Advent of Code challenges. Advent of Code is an annual coding event that provides daily programming puzzles in the month of December, designed to be fun and challenging. You can find more about Advent of Code [here](https://adventofcode.com/).
+
+## Table of Contents
+
+- [About Advent of Code](#about-advent-of-code)
+- [Folder Structure](#folder-structure)
+- [Detail](#Details)
+
+## About Advent of Code
+
+Advent of Code is an advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. Participants can join the event at any time during December and solve a puzzle each day.
+
+For more details, visit the [Advent of Code website](https://adventofcode.com/).
+
+## Folder Structure
+
+```bash
+/AOC2023
+├── dayX
+│   └── partX
+│       └── solution.sh
+│       └── solution.js
+|       └── helper.js
+|       └── input.txt
+|       └── sampleX.txt
+
+```
+
+## Details
+
+I addressed these challenges using a combination of bash and JavaScript, alternating between the two. The goal was to become more proficient in bash.
