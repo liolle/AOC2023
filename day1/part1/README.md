@@ -13,5 +13,5 @@ We can then use two pointers starting at index 0, let's call them `first` and `l
 ## Demo
 
 ```bash
-bash day1.sh ../input1.txt
+bash one.sh <path-to-input>
 ```
