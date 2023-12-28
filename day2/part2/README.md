@@ -4,7 +4,9 @@
 
 ## Solution
 
-To solve part 2 we want for each game to keep track of the maximum for each color.
+To address the second part, our objective to keep track of the maximum value for each color in every game.
+
+We can see that as finding the max into an array.
 
 ## Demo
 
