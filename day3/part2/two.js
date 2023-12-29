@@ -1,7 +1,6 @@
 const fs = require("fs");
 
-// const filePath = "test3.txt";
-const filePath = "input1.txt";
+const filePath = "../input2.txt";
 
 const fileContent = fs.readFileSync(filePath, "utf-8");
 
@@ -105,7 +104,6 @@ const visit = (map) => {
         }
 
         if (ratio.length == 2) {
-          console.log("-->", char, ratio);
           numbers += Number(ratio[0]) * Number(ratio[1]);
         }
       }
