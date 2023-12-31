@@ -27,7 +27,3 @@ For more details, visit the [Advent of Code website](https://adventofcode.com/).
 |       └── sampleX.txt
 
 ```
-
-## Details
-
-I addressed these challenges using a combination of bash and JavaScript, alternating between the two. The goal was to become more proficient in bash.
