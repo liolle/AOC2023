@@ -1,4 +1,4 @@
-## Cube Conundrum
+## Gear Ratios
 
 [Challenge](https://adventofcode.com/2023/day/3)
 

@@ -1,4 +1,4 @@
-## Cube Conundrum
+## Scratchcards
 
 [Challenge](https://adventofcode.com/2023/day/4)
 
