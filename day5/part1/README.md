@@ -19,5 +19,5 @@ Once this setup is established, I can convert a seed into a location by passing 
 ## Demo
 
 ```bash
-bash one.sh ../input1.txt
+bash one.sh <path-to-input>
 ```
