@@ -70,8 +70,6 @@ export const walk = (path, directions, spots) => {
     LCM_MAP.push(single_walk(path, directions, spots[i]));
   }
 
-  LCM_MAP;
-
   LCM_MAP.sort((a, b) => a - b);
 
   let multiple = LCM_MAP[LCM_MAP.length - 1];
