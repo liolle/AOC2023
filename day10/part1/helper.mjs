@@ -110,8 +110,6 @@ const neighbors = (position, arr) => {
   return res;
 };
 
-const is_enclosed = () => {};
-
 export const walk = (fileContent) => {
   const arr = input_to_array(fileContent);
   const start = find_start(arr);
