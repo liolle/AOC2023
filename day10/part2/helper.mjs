@@ -143,9 +143,10 @@ const ray_cast = (position, arr, borders) => {
   let count = 0;
 
   for (let i = position.col; i < arr[position.row].length; i++) {
-    const in_border = borders.get(`${position.row}-${i}`);
-
-    if (/F|7|\||S/.test(arr[position.row][i]) && in_border != undefined) {
+    if (
+      /F|7|\||S/.test(arr[position.row][i]) &&
+      borders.has(`${position.row}-${i}`)
+    ) {
       count++;
     }
   }
