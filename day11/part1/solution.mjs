@@ -1,5 +1,5 @@
 import { exit } from "process";
-import { input_to_array, transform_table, soft_scan } from "./helper.mjs";
+import { inputToArray, transformTable, softScan } from "./helper.mjs";
 
 import fs from "fs";
 
@@ -11,10 +11,10 @@ if (!file) {
 
 const fileContent = fs.readFileSync(file, "utf-8");
 
-const table = input_to_array(fileContent);
+const table = inputToArray(fileContent);
 
-const t_table = transform_table(table);
+const t_table = transformTable(table);
 
-const scan_map = soft_scan(t_table);
+const scan_map = softScan(t_table);
 
 console.log(scan_map.reduce((acc, val) => acc + val.distance, 0));

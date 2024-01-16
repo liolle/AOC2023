@@ -18,7 +18,7 @@ In order to explore the pipes outlining our form, we can use a DFS approach, whi
 
   ```ts
   const walk = (fileContent) => {
-    const arr = input_to_array(fileContent);
+    const arr = inputToArray(fileContent);
     const start = find_start(arr);
     const queue = [];
     const visited = new Map();

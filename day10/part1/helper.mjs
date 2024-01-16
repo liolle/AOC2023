@@ -24,7 +24,7 @@ direction_map.set("F", [
   { row: 0, col: 1 },
 ]);
 
-const input_to_array = (input) => {
+const inputToArray = (input) => {
   const arr = input
     .trim()
     .split("\n")
@@ -111,7 +111,7 @@ const neighbors = (position, arr) => {
 };
 
 export const walk = (fileContent) => {
-  const arr = input_to_array(fileContent);
+  const arr = inputToArray(fileContent);
   const start = find_start(arr);
   const queue = [];
   const visited = new Map();
