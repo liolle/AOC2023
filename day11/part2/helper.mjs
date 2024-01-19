@@ -1,8 +1,3 @@
-/**
- * value
- * next
- */
-
 export const inputToArray = (input) => {
   const arr = input
     .trim()
@@ -39,10 +34,6 @@ export const transformTable = (table) => {
   const marks = point_map(table);
   const res_table = [];
 
-  const col_num = Array.from(marks, (value) => value).filter((val) =>
-    /C./.test(val)
-  ).length;
-  const empty_line = new Array(table[0].length + col_num).fill(".");
   for (let i = 0; i < table.length; i++) {
     const tmp_arr = [];
     if (marks.has(`R${i}`)) res_table.push(tmp_arr);

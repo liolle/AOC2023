@@ -1,5 +1,5 @@
 import { exit } from "process";
-import { inputToArray, softScan } from "./two.mjs";
+import { inputToArray, softScan } from "./helper.mjs";
 
 import fs from "fs";
 
