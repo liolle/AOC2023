@@ -21,17 +21,8 @@ const inputs = fileContent.split("\n").map((val) => {
 });
 
 let sum = 0;
-let i = 0;
 for (const input of inputs) {
   sum += BFS.walk(input[0], input[1]).size;
-  console.log(++i);
 }
 
 console.log(sum);
-// console.log(BFS.walk(inputs[4][0], inputs[4][1]));
-// console.log(
-//   "???#???##?????###?.".split("").reduce((acc, current) => {
-//     if (current == "#") return acc + 1;
-//     return acc;
-//   }, 0)
-// );
