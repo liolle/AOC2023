@@ -1,6 +1,5 @@
 const isPalindrome = (input_string) => {
   const input = input_string.split("");
-
   for (let i = 0; i < input.length; i++) {
     if (input[input.length - i - 1] != input[i]) return false;
   }
@@ -9,7 +8,6 @@ const isPalindrome = (input_string) => {
 
 function linesToTables(fileContent) {
   const lines = fileContent.split("\n").map((val) => val.trim());
-
   const tables = [];
   let tmp_table = [];
   for (const line of lines) {
@@ -23,7 +21,6 @@ function linesToTables(fileContent) {
   if (tmp_table.length > 0) {
     tables.push(tmp_table);
   }
-
   return tables;
 }
 
@@ -37,7 +34,6 @@ function intersect(l1, l2) {
 
 function intersectMultiple(idx_list) {
   let intersect_res = idx_list.pop() || [];
-
   while (idx_list.length > 0) {
     intersect_res = intersect(intersect_res, idx_list.pop());
   }
@@ -47,21 +43,19 @@ function intersectMultiple(idx_list) {
 export function rowColString(fileContent) {
   const input_array = linesToTables(fileContent);
   const res = [];
-
   for (const elem of input_array) {
     const row_list = [];
     const col_list = [];
-
     for (let col = 0; col < elem[0].length; col++) {
       let tmp_col = "";
       for (let row = 0; row < elem.length; row++) {
         tmp_col += elem[row][col];
       }
-      col_list.push(palSub(tmp_col));
+      col_list.push(findPalindromes(tmp_col));
     }
 
     for (const line of elem) {
-      row_list.push(palSub(line));
+      row_list.push(findPalindromes(line));
     }
 
     res.push({
@@ -74,7 +68,7 @@ export function rowColString(fileContent) {
   return res;
 }
 
-export const palSub = (input_string) => {
+export const findPalindrome = (input_string) => {
   const input = input_string.split("");
   const targets = [];
   for (let i = 0; i < input.length; i++) {
