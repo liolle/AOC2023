@@ -82,7 +82,6 @@ export function rowColString(fileContent) {
   for (const elem of input_array) {
     res.push(processTable(elem));
   }
-
   return res;
 }
 
@@ -108,19 +107,6 @@ export const palSub = (input_string) => {
     line: input_string,
   };
 };
-
-function checkIdx(idx1, idx2) {
-  if (idx1.length != idx2.length) return false;
-
-  const set = new Set();
-  for (const elem of idx2) {
-    set.add(`I-${elem.index}`);
-  }
-  for (const elem of idx1) {
-    if (set.has(`I-${elem.index}`)) return false;
-  }
-  return true;
-}
 
 export function scan(tables) {
   const output = [];
