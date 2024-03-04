@@ -14,8 +14,6 @@ Use [dijkstra](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 
 ### Algorithm
 
-## Demo
-
 1.**Walk**
 
 ```js
@@ -56,6 +54,8 @@ function walk(table) {
   }
 }
 ```
+
+## Demo
 
 ```bash
 node solution.mjs <path-to-input>
