@@ -63,25 +63,25 @@ export function createMap(expressionList) {
   return map;
 }
 
-export function walk(input, map) {
-  let cur = "in";
+export function validate(input, map) {
+  let current = "in";
 
-  while (cur != "R" && cur != "A") {
-    const checks = map.get(cur);
+  while (current != "R" && current != "A") {
+    const checks = map.get(current);
     for (let condition of checks) {
       if (condition.key == "default") {
-        cur = condition.func("");
+        current = condition.func("");
         continue;
       }
       const val = input[condition.key];
       const res = condition.func(val);
       if (!res) continue;
-      cur = res;
+      current = res;
       break;
     }
   }
   return {
     sum: input.sum,
-    accepted: cur == "A",
+    accepted: current == "A",
   };
 }
