@@ -60,9 +60,7 @@ export function createMap(expressionList) {
 }
 
 function splitRange(node, map) {
-  const range = node.range;
   const key_map = map.get(node.key);
-  console.log(key_map, node.key);
   const directions = key_map[node.idx];
   let pivot = directions.limit;
 
@@ -70,36 +68,47 @@ function splitRange(node, map) {
     return [
       {
         key: directions.key,
-        idx: node.idx + 1,
-        range: node.range,
+        idx: 0,
+        ranges: node.ranges,
       },
     ];
   }
+  const range = node.ranges[directions.key];
   pivot = Number(pivot);
 
   const res = [];
 
   const r1 = {
-    key: directions.key,
+    key: node.key,
     idx: node.idx + 1,
-    range: [range[0], pivot],
+    ranges: { ...node.ranges },
   };
   const r2 = {
-    key: directions.key,
+    key: node.key,
     idx: node.idx + 1,
-    range: [pivot, range[1]],
+    ranges: { ...node.ranges },
   };
 
   switch (directions.operator) {
     case "greater":
-      r2.range = [pivot + 1, range[1]];
+      if (pivot + 1 < range[1])
+        r2.ranges[directions.key] = [pivot + 1, range[1]];
+      else r2.ranges[directions.key] = [range[1], pivot];
+
+      if (range[0] < pivot) r1.ranges[directions.key] = [range[0], pivot];
+      else r1.ranges[directions.key] = [pivot, range[0]];
       r2.idx = 0;
       r2.key = directions.ret;
       break;
     case "smaller":
+      if (range[0] < pivot - 1)
+        r1.ranges[directions.key] = [range[0], pivot - 1];
+      else r1.ranges[directions.key] = [pivot, range[0]];
+
+      if (pivot < range[1]) r2.ranges[directions.key] = [pivot, range[1]];
+      else r2.ranges[directions.key] = [range[1], pivot];
       r1.idx = 0;
       r1.key = directions.ret;
-      r1.range = [range[0], pivot - 1];
       break;
 
     default:
@@ -107,32 +116,39 @@ function splitRange(node, map) {
   }
 
   for (let el of [r1, r2]) {
-    if (el.range[0] < el.range[1]) res.push(el);
+    res.push(el);
   }
-  console.log(res);
   return res;
 }
 
-export function validate(input, map) {
+export function walk(map) {
   const queue = [
     {
       key: "in",
       idx: 0,
-      range: [1, 4000],
+      ranges: {
+        x: [1, 4000],
+        m: [1, 4000],
+        a: [1, 4000],
+        s: [1, 4000],
+      },
+      last: "",
     },
   ];
+  const accepted = [];
+  const rejected = [];
+
   while (queue.length > 0) {
     const node = queue.pop();
-    console.log(node);
     if (node.key == "A" || node.key == "R") {
-      console.log(node);
+      if (node.key == "A") accepted.push(node.ranges);
       continue;
     }
 
     const nb = splitRange(node, map);
-
     for (let el of nb) {
       queue.push(el);
     }
   }
+  return [accepted, rejected];
 }

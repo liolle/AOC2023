@@ -1,5 +1,5 @@
 import fs from "fs";
-import { createMap, validate } from "./helper.mjs";
+import { createMap, walk } from "./helper.mjs";
 const file = process.argv[2];
 if (!file) {
   console.log("Require input file");
@@ -52,7 +52,13 @@ const map = createMap(data.map_data);
 
 let sum = 0;
 
-for (let el of t_input) {
-  const res = validate(el, map);
-  break;
+const res = walk(map)[0];
+for (let el of res) {
+  const x = el.x[1] - el.x[0] + 1;
+  const m = el.m[1] - el.m[0] + 1;
+  const a = el.a[1] - el.a[0] + 1;
+  const s = el.s[1] - el.s[0] + 1;
+  sum += x * m * a * s;
 }
+
+console.log(sum);
