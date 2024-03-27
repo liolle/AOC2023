@@ -1,8 +1,10 @@
-## Gear Ratios
+## Gear Ratios - Advent of Code Day 3 Challenge
 
 [Challenge](https://adventofcode.com/2023/day/3)
 
-## Solution
+### Problem Overview
+
+### Approach
 
 One way to visualize this challenge is to imagine a around each number in that circle would then be a part number.
 
