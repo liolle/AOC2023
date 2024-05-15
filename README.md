@@ -19,11 +19,12 @@ For more details, visit the [Advent of Code website](https://adventofcode.com/).
 ```bash
 /AOC2023
 ├── dayX
-│   └── partX
-│       └── solution.sh
-│       └── solution.js
-|       └── helper.js
-|       └── input.txt
-|       └── sampleX.txt
-
+    └── part1
+        └── solution.mjs
+        └── helper.mjs
+        └── input.txt
+    └── part2
+        └── solution.mjs
+        └── helper.mjs
+        └── input.txt
 ```
