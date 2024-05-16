@@ -6,7 +6,6 @@ This repository contains my solutions for the Advent of Code challenges. Advent 
 
 - [About Advent of Code](#about-advent-of-code)
 - [Folder Structure](#folder-structure)
-- [Detail](#Details)
 
 ## About Advent of Code
 
